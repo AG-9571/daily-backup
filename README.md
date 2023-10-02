@@ -20,12 +20,24 @@ To use it, run the following command in the terminal:
 ```bash
 daily-backup.sh
 ```
+The script will ask you for the directory to be backed up, and the directory where the backups will be saved. If the directory does not exist, it will be created.
+
+#### Cron service
+To automate the backup process, you can use the cron service. To do this, you must execute the following command in the terminal:
+```bash
+crontab -e
+```
+This will open the cron configuration file. You must add the following line to the end of the file:
+```bash
+0 12 * * * ./daily-backup.sh
+```
 
 ### backupRestore.sh
 This script allows restoring a backup of a specified directory.
 ```bash
 backup-restore.sh <aaaammdd> ./
 ```
+The first parameter is the date of the backup to be restored, and the second parameter is the directory where the backup will be restored.
 
 ## Contributing
 To contribute to the project, you must first fork the repository, and then clone it. To do this, you must execute the following commands:
